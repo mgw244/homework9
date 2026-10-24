@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercedez Wright - Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="theme-dark" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-root-margin="-25% 0px -75%" data-bs-threshold="[0]" tabindex="0">
+
+  <a class="scroll-link visually-hidden-focusable btn btn-warning position-absolute top-0 start-0 m-2 z-3" href="#summary">Skip to content</a>
+
+  <div class="page-loader d-flex flex-column justify-content-center align-items-center gap-3" aria-hidden="true">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="text-uppercase small text-body-secondary mb-0">Loading Portfolio</p>
+  </div>
+
+  <header class="site-header bg-primary bg-gradient text-white py-4 py-md-5" id="top">
+    <div class="container">
+      <div class="row align-items-center gy-3">
+        <div class="col-md-8 text-center text-md-start">
+          <h1 class="display-4 fw-bold mb-1">Mercedez Wright</h1>
+          <p class="lead mb-0">Aspiring IT Professional: Network &amp; Cybersecurity</p>
+          <p id="greeting" class="greeting d-inline-block mt-3 mb-0 px-3 py-2 rounded-3 fw-medium">Welcome to my portfolio!</p>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+          <p class="small text-uppercase fw-semibold mb-2">B.S. Information Technology &middot; <abbr title="Northern Arizona University">NAU</abbr></p>
+          <a class="btn btn-warning btn-lg fw-semibold shadow resume-download" href="resume/Mercedez-Wright-Resume.pdf" download>
+            &#8681; Download Resume
+          </a>
+          <p class="small mt-2 mb-0">Resume downloads: <span class="download-count fw-bold">0</span></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav id="mainNav" class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom shadow-sm" aria-label="Section navigation">
+    <div class="container">
+      <a class="navbar-brand fw-bold scroll-link" href="#top">MW</a>
+      <div class="d-flex align-items-center gap-2 order-lg-last ms-auto ms-lg-3">
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm" type="button" aria-label="Switch to light theme">&#9728; Light</button>
+        <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#customizePanel" aria-controls="customizePanel">Customize</button>
+      </div>
+      <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
+              aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navLinks">
+        <ul id="navMenu" class="navbar-nav nav-underline ms-auto gap-lg-3"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section id="summary" class="page-section border-bottom">
+      <h2 class="h2 section-title mb-4">Summary</h2>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-8">
+          <p class="lead mb-0">
+            I'm working toward a career in IT, with a particular interest in cybersecurity and in helping people solve the
+            technology problems that get in the way of their day. I like the process of learning how computer systems actually
+            work under the hood, from troubleshooting a single device to understanding how networks connect and protect everything
+            behind the scenes. My goal is to build a strong, practical understanding of computer systems and networking, and to
+            keep growing that knowledge throughout my career.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <div class="card bg-body-tertiary border-warning text-center">
+            <div class="card-body">
+              <p class="small text-uppercase text-warning fw-semibold mb-2">My path</p>
+              <p class="h5 mb-1">Business Management</p>
+              <p class="text-warning fs-4 lh-1 mb-1" aria-hidden="true">&darr;</p>
+              <p class="visually-hidden">to</p>
+              <p class="h5 mb-0">Information Technology</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="page-section border-bottom">
+      <h2 class="h2 section-title mb-4">Education</h2>
+      <div class="row">
+        <div class="col-12">
+          <div id="educationTable" class="table-responsive rounded border"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="page-section border-bottom">
+      <h2 class="h2 section-title mb-4">Skills</h2>
+      <div class="row g-2 align-items-center mb-4">
+        <div class="col-md-6">
+          <label for="skillSearch" class="visually-hidden">Search skills</label>
+          <input type="search" id="skillSearch" class="form-control" placeholder="Search skills..." autocomplete="off">
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p id="skillCount" class="small text-body-secondary mb-0" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <div class="col">
+          <div class="card h-100 bg-body-tertiary hover-lift">
+            <div class="card-header">
+              <h3 class="h5 mb-0">Software &amp; Tools</h3>
+            </div>
+            <ul id="techSkills" class="list-group list-group-flush skill-list"></ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 bg-body-tertiary hover-lift">
+            <div class="card-header">
+              <h3 class="h5 mb-0">Business &amp; Soft Skills</h3>
+            </div>
+            <ul id="softSkills" class="list-group list-group-flush skill-list"></ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card bg-body-tertiary mt-4">
+        <div class="card-body">
+          <h3 class="h5 mb-3">Add a Skill</h3>
+          <form id="skillForm" class="row g-2 align-items-end" novalidate>
+            <div class="col-md-6">
+              <label for="skillInput" class="form-label small text-body-secondary mb-1">Skill</label>
+              <input type="text" id="skillInput" class="form-control" placeholder="e.g. Active Directory" maxlength="40" autocomplete="off">
+            </div>
+            <div class="col-md-4">
+              <label for="skillCategory" class="form-label small text-body-secondary mb-1">Category</label>
+              <select id="skillCategory" class="form-select">
+                <option value="techSkills">Software &amp; Tools</option>
+                <option value="softSkills">Business &amp; Soft Skills</option>
+              </select>
+            </div>
+            <div class="col-md-2 d-grid">
+              <button type="submit" class="btn btn-primary">Add Skill</button>
+            </div>
+          </form>
+          <p id="skillMessage" class="small mt-2 mb-0" role="status" aria-live="polite"></p>
+          <p class="small text-body-secondary mt-2 mb-0">Press Enter to add a skill or Esc to clear the form. Click any skill to rename it, or &times; to remove it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="page-section border-bottom">
+      <h2 class="h2 section-title mb-2">Projects</h2>
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
+        <p class="text-body-secondary mb-0">Select a project to see the full details.</p>
+        <div class="btn-group btn-group-sm" role="group" aria-label="Sort projects by deadline">
+          <button type="button" class="btn btn-outline-primary sort-btn active" data-order="asc" aria-pressed="true">Earliest deadline</button>
+          <button type="button" class="btn btn-outline-primary sort-btn" data-order="desc" aria-pressed="false">Latest deadline</button>
+        </div>
+      </div>
+      <div id="projectList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+    </section>
+
+    <section id="experience" class="page-section border-bottom">
+      <h2 class="h2 section-title mb-4">Experience</h2>
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-7">
+          <div id="experienceTable" class="table-responsive rounded border"></div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card bg-body-tertiary border-warning hover-lift">
+            <div class="card-body">
+              <h3 class="h6 text-uppercase text-warning fw-semibold">On the Job</h3>
+              <p class="card-text text-body-secondary mb-0">
+                Worked directly with computer systems to communicate with customers about their orders and
+                manage order records from start to finish, including data entry, tracking order status,
+                resolving discrepancies, and keeping accurate digital records. This role built a practical,
+                everyday familiarity with business software and gave me hands-on experience troubleshooting
+                issues before they became bigger problems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="page-section">
+      <h2 class="h2 section-title mb-4">Contact Information</h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+        <div class="col">
+          <div class="card h-100 bg-body-tertiary text-center hover-lift">
+            <div class="card-body">
+              <p class="small text-uppercase text-body-secondary fw-semibold mb-1">Email</p>
+              <a class="link-underline link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" href="mailto:mgw244@nau.edu">mgw244@nau.edu</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 bg-body-tertiary text-center hover-lift">
+            <div class="card-body">
+              <p class="small text-uppercase text-body-secondary fw-semibold mb-1">Phone</p>
+              <a class="link-underline link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" href="tel:+16028141830">602-814-1830</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 bg-body-tertiary text-center hover-lift">
+            <div class="card-body">
+              <p class="small text-uppercase text-body-secondary fw-semibold mb-1">GitHub</p>
+              <a class="link-underline link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" href="https://github.com/mgw244" target="_blank" rel="noopener">github.com/mgw244</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 bg-body-tertiary text-center hover-lift">
+            <div class="card-body">
+              <p class="small text-uppercase text-body-secondary fw-semibold mb-1">Location</p>
+              <span>Avondale, Arizona</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-8">
+          <div class="card bg-body-tertiary border-primary text-center">
+            <div class="card-body py-4">
+              <p class="lead mb-3">Feel free to reach out about opportunities, questions, or feedback.</p>
+              <div class="d-flex flex-wrap justify-content-center gap-2">
+                <a class="btn btn-primary" href="mailto:mgw244@nau.edu">Email Me</a>
+                <a class="btn btn-outline-warning resume-download" href="resume/Mercedez-Wright-Resume.pdf" download>&#8681; Download Resume</a>
+              </div>
+              <p class="small text-body-secondary mt-3 mb-0">Resume downloads: <span class="download-count fw-bold">0</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer bg-primary bg-gradient text-white py-5 mt-5">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-md-5 text-center text-md-start">
+          <p class="h5 mb-1">Mercedez Wright</p>
+          <p class="small mb-0">Aspiring IT Professional: Network &amp; Cybersecurity</p>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-inline text-center mb-0">
+            <li class="list-inline-item mx-2"><a class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" href="mailto:mgw244@nau.edu">Email</a></li>
+            <li class="list-inline-item mx-2"><a class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" href="https://github.com/mgw244" target="_blank" rel="noopener">GitHub</a></li>
+            <li class="list-inline-item mx-2"><a class="scroll-link link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" href="#top">Back to top &uarr;</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 text-center text-md-end">
+          <p class="small mb-0">&copy; 2026 Mercedez Wright</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h4" id="projectModal1Label">Local Network File Transfer App</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            A desktop utility that lets devices on the same local network discover each other and
+            send files directly, without relying on cloud storage or email as a middleman. The app
+            scans the LAN to list available devices, opens a direct socket connection between sender
+            and receiver, and streams the file in chunks so larger transfers do not have to sit fully
+            in memory. It also handles the basics that make a transfer tool actually usable: showing
+            transfer progress, confirming when a file finishes writing to disk, and gracefully handling
+            a dropped connection mid-transfer.
+          </p>
+          <div class="row row-cols-1 row-cols-sm-3 g-3">
+            <div class="col">
+              <figure class="figure w-100 mb-0">
+                <img src="images/project1-1.svg" class="figure-img img-fluid w-100 rounded border" alt="Diagram showing two devices connecting directly over the local network">
+                <figcaption class="figure-caption text-center">Peer-to-peer device discovery</figcaption>
+              </figure>
+            </div>
+            <div class="col">
+              <figure class="figure w-100 mb-0">
+                <img src="images/project1-2.svg" class="figure-img img-fluid w-100 rounded border" alt="Progress bar interface showing a file transfer in progress">
+                <figcaption class="figure-caption text-center">Chunked transfer with live progress</figcaption>
+              </figure>
+            </div>
+            <div class="col">
+              <figure class="figure w-100 mb-0">
+                <img src="images/project1-3.svg" class="figure-img img-fluid w-100 rounded border" alt="List interface showing available devices found on the local network">
+                <figcaption class="figure-caption text-center">List of discoverable LAN devices</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h4" id="projectModal2Label">Mobile-to-PC Controller Driver</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            A tool that turns a phone into a working game controller for a PC by sending input data
+            over the local network. The mobile side captures button presses, joystick movement, and
+            triggers, then packages that input and sends it to the PC with low enough latency to feel
+            responsive during actual gameplay. On the PC side, a virtual controller driver takes that
+            incoming data and presents it to the operating system as a standard controller, so games
+            and other software can read it the same way they would a physical gamepad, with no extra
+            configuration needed on the game's end.
+          </p>
+          <div class="row row-cols-1 row-cols-sm-3 g-3">
+            <div class="col">
+              <figure class="figure w-100 mb-0">
+                <img src="images/project2-1.svg" class="figure-img img-fluid w-100 rounded border" alt="Illustration of a phone acting as a virtual game controller">
+                <figcaption class="figure-caption text-center">Phone mapped as a virtual gamepad</figcaption>
+              </figure>
+            </div>
+            <div class="col">
+              <figure class="figure w-100 mb-0">
+                <img src="images/project2-2.svg" class="figure-img img-fluid w-100 rounded border" alt="Diagram of input data flowing from mobile device to PC virtual driver">
+                <figcaption class="figure-caption text-center">Low-latency input pipeline</figcaption>
+              </figure>
+            </div>
+            <div class="col">
+              <figure class="figure w-100 mb-0">
+                <img src="images/project2-3.svg" class="figure-img img-fluid w-100 rounded border" alt="Table mapping phone touch controls to standard gamepad inputs">
+                <figcaption class="figure-caption text-center">Touch controls mapped to gamepad inputs</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h4" id="projectModal3Label">Home Network Monitoring Dashboard</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            An ongoing project to build a simple web dashboard for a home network. It keeps a list of
+            the devices on the network, checks on a schedule whether each one is still responding, and
+            shows its status at a glance so a device that drops offline is easy to spot.
+          </p>
+          <ul>
+            <li>List every known device with its name and address</li>
+            <li>Mark each device as online or offline</li>
+            <li>Highlight devices that stop responding</li>
+          </ul>
+          <img src="images/project3-1.svg" class="img-fluid w-100 rounded border" alt="Dashboard showing which devices on a home network are online">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="customizePanel" aria-labelledby="customizePanelLabel">
+    <div class="offcanvas-header border-bottom">
+      <h2 class="offcanvas-title h5" id="customizePanelLabel">Customize the Page</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="mb-4">
+        <label for="fontSizeInput" class="form-label d-flex justify-content-between">
+          Font size <span id="fontSizeValue" class="text-body-secondary">16px</span>
+        </label>
+        <input type="range" class="form-range" id="fontSizeInput" min="12" max="22" step="1" value="16">
+      </div>
+      <div class="mb-4">
+        <label for="bgColorInput" class="form-label">Background color</label>
+        <input type="color" class="form-control form-control-color w-100" id="bgColorInput" value="#10141b">
+      </div>
+      <div class="mb-4">
+        <span class="form-label d-block">Theme</span>
+        <button id="themeTogglePanel" type="button" class="btn btn-outline-secondary w-100">&#9728; Switch to light theme</button>
+      </div>
+      <button id="resetStyles" type="button" class="btn btn-warning w-100">Reset to default</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

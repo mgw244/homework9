@@ -1,0 +1,23 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="260" fill="#161c26"/>
+  <rect x="0.5" y="0.5" width="399" height="259" fill="none" stroke="#26303e"/>
+  <rect x="40" y="60" width="110" height="26" rx="13" fill="#10141b" stroke="#5b8cff"/>
+  <text x="95" y="77" font-family="sans-serif" font-size="10" fill="#5b8cff" text-anchor="middle">Touch Button A</text>
+  <rect x="250" y="60" width="110" height="26" rx="13" fill="#10141b" stroke="#ffb454"/>
+  <text x="305" y="77" font-family="sans-serif" font-size="10" fill="#ffb454" text-anchor="middle">Gamepad South</text>
+  <line x1="150" y1="73" x2="244" y2="73" stroke="#26303e" stroke-width="2"/>
+  <polygon points="238,68 248,73 238,78" fill="#26303e"/>
+  <rect x="40" y="105" width="110" height="26" rx="13" fill="#10141b" stroke="#5b8cff"/>
+  <text x="95" y="122" font-family="sans-serif" font-size="10" fill="#5b8cff" text-anchor="middle">Joystick Axis</text>
+  <rect x="250" y="105" width="110" height="26" rx="13" fill="#10141b" stroke="#ffb454"/>
+  <text x="305" y="122" font-family="sans-serif" font-size="10" fill="#ffb454" text-anchor="middle">Left Stick X/Y</text>
+  <line x1="150" y1="118" x2="244" y2="118" stroke="#26303e" stroke-width="2"/>
+  <polygon points="238,113 248,118 238,123" fill="#26303e"/>
+  <rect x="40" y="150" width="110" height="26" rx="13" fill="#10141b" stroke="#5b8cff"/>
+  <text x="95" y="167" font-family="sans-serif" font-size="10" fill="#5b8cff" text-anchor="middle">Trigger Slider</text>
+  <rect x="250" y="150" width="110" height="26" rx="13" fill="#10141b" stroke="#ffb454"/>
+  <text x="305" y="167" font-family="sans-serif" font-size="10" fill="#ffb454" text-anchor="middle">Right Trigger</text>
+  <line x1="150" y1="163" x2="244" y2="163" stroke="#26303e" stroke-width="2"/>
+  <polygon points="238,158 248,163 238,168" fill="#26303e"/>
+  <text x="200" y="215" font-family="sans-serif" font-size="13" fill="#8b97a8" text-anchor="middle">Input Mapping Table</text>
+</svg>

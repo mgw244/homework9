@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="260" fill="#161c26"/>
+  <rect x="0.5" y="0.5" width="399" height="259" fill="none" stroke="#26303e"/>
+  <rect x="130" y="60" width="140" height="90" rx="14" fill="#10141b" stroke="#5b8cff" stroke-width="2"/>
+  <circle cx="160" cy="110" r="16" fill="none" stroke="#ffb454" stroke-width="2"/>
+  <circle cx="240" cy="95" r="6" fill="#5b8cff"/>
+  <circle cx="240" cy="115" r="6" fill="#5b8cff"/>
+  <circle cx="225" cy="105" r="6" fill="#5b8cff"/>
+  <circle cx="255" cy="105" r="6" fill="#5b8cff"/>
+  <text x="200" y="185" font-family="sans-serif" font-size="13" fill="#8b97a8" text-anchor="middle">Phone as Virtual Controller</text>
+</svg>
